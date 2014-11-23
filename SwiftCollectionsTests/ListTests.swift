@@ -67,4 +67,19 @@ class ListTests: XCTestCase {
         // Then
         XCTAssertEqual(doubled, [2,4,6,8,10])
     }
+    
+    func testThatItSupportsContains() {
+        XCTAssertTrue(contains(tenElementList, 5))
+        XCTAssertFalse(contains(tenElementList, 15))
+    }
+    
+    func testDescriptionFormattingForEmptyList() {
+        XCTAssertEqual(emptyList.description, "[]")
+        XCTAssertEqual(emptyList.debugDescription, "List: []")
+    }
+
+    func testDescriptionFormattingForNonEmptyList() {
+        XCTAssertEqual(fiveElementList.description, "[1, 2, 3, 4, 5]")
+        XCTAssertEqual(fiveElementList.debugDescription, "List: [1, 2, 3, 4, 5]")
+    }
 }

@@ -73,3 +73,17 @@ extension List : SequenceType {
         return ListGenerator(list: self)
     }
 }
+
+extension List : Printable {
+    public var description: String {
+        let elementDescriptions = map(self) { "\($0)" }
+        return "[" + ", ".join(elementDescriptions) + "]"
+    }
+}
+
+extension List : Printable {
+    public var debugDescription: String {
+        let elementDescriptions = map(self) { "\($0)" }
+        return "List: [" + ", ".join(elementDescriptions) + "]"
+    }
+}
