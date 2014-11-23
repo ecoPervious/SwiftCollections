@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D88AF1C1A2209AB008D6E83 /* SwiftCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D88AF1B1A2209AB008D6E83 /* SwiftCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D88AF221A2209AB008D6E83 /* SwiftCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D88AF161A2209AB008D6E83 /* SwiftCollections.framework */; };
-		5D88AF291A2209AB008D6E83 /* SwiftCollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88AF281A2209AB008D6E83 /* SwiftCollectionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,10 +23,8 @@
 /* Begin PBXFileReference section */
 		5D88AF161A2209AB008D6E83 /* SwiftCollections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCollections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D88AF1A1A2209AB008D6E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D88AF1B1A2209AB008D6E83 /* SwiftCollections.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCollections.h; sourceTree = "<group>"; };
 		5D88AF211A2209AB008D6E83 /* SwiftCollectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCollectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D88AF271A2209AB008D6E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D88AF281A2209AB008D6E83 /* SwiftCollectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCollectionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +67,6 @@
 		5D88AF181A2209AB008D6E83 /* SwiftCollections */ = {
 			isa = PBXGroup;
 			children = (
-				5D88AF1B1A2209AB008D6E83 /* SwiftCollections.h */,
 				5D88AF191A2209AB008D6E83 /* Supporting Files */,
 			);
 			path = SwiftCollections;
@@ -88,7 +83,6 @@
 		5D88AF251A2209AB008D6E83 /* SwiftCollectionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				5D88AF281A2209AB008D6E83 /* SwiftCollectionsTests.swift */,
 				5D88AF261A2209AB008D6E83 /* Supporting Files */,
 			);
 			path = SwiftCollectionsTests;
@@ -109,7 +103,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D88AF1C1A2209AB008D6E83 /* SwiftCollections.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +209,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D88AF291A2209AB008D6E83 /* SwiftCollectionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
