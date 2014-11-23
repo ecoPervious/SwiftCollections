@@ -67,33 +67,17 @@
 		5D88AF181A2209AB008D6E83 /* SwiftCollections */ = {
 			isa = PBXGroup;
 			children = (
-				5D88AF191A2209AB008D6E83 /* Supporting Files */,
-			);
-			path = SwiftCollections;
-			sourceTree = "<group>";
-		};
-		5D88AF191A2209AB008D6E83 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
 				5D88AF1A1A2209AB008D6E83 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = SwiftCollections;
 			sourceTree = "<group>";
 		};
 		5D88AF251A2209AB008D6E83 /* SwiftCollectionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				5D88AF261A2209AB008D6E83 /* Supporting Files */,
-			);
-			path = SwiftCollectionsTests;
-			sourceTree = "<group>";
-		};
-		5D88AF261A2209AB008D6E83 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
 				5D88AF271A2209AB008D6E83 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = SwiftCollectionsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +291,7 @@
 		5D88AF2D1A2209AB008D6E83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -318,12 +303,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5D88AF2E1A2209AB008D6E83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
