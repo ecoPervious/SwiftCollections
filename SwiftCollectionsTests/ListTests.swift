@@ -6,6 +6,8 @@ class ListTests: XCTestCase {
     let emptyList = List<Int>()
     let oneElementList = List(head: 10, tail: List())
     let twoElementList = List(head: 10, tail: List(head: 20, tail: List()))
+    let fiveElementList = List(1,2,3,4,5)
+    let tenElementList = List(1,2,3,4,5,6,7,8,9,10)
     
     override func setUp() {
         super.setUp()
@@ -50,15 +52,19 @@ class ListTests: XCTestCase {
     }
     
     func testThatConvenienceInitConstructsProperList() {
-        // Given
-        let list = List(1,2,3,4,5)
+        XCTAssertEqual(fiveElementList.count, 5)
+        XCTAssertEqual(fiveElementList.head, 1)
+        XCTAssertEqual(fiveElementList.tail.head, 2)
+        XCTAssertEqual(fiveElementList.tail.tail.head, 3)
+        XCTAssertEqual(fiveElementList.tail.tail.tail.head, 4)
+        XCTAssertEqual(fiveElementList.tail.tail.tail.tail.head, 5)
+        XCTAssertTrue(fiveElementList.tail.tail.tail.tail.tail.isEmpty)
+    }
+    
+    func testThatItCanBeEnumerated() {
+        // When
+        let doubled = map(fiveElementList) { $0 * 2 }
         // Then
-        XCTAssertEqual(list.count, 5)
-        XCTAssertEqual(list.head, 1)
-        XCTAssertEqual(list.tail.head, 2)
-        XCTAssertEqual(list.tail.tail.head, 3)
-        XCTAssertEqual(list.tail.tail.tail.head, 4)
-        XCTAssertEqual(list.tail.tail.tail.tail.head, 5)
-        XCTAssertTrue(list.tail.tail.tail.tail.tail.isEmpty)
+        XCTAssertEqual(doubled, [2,4,6,8,10])
     }
 }

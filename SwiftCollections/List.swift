@@ -23,7 +23,8 @@ public final class List<T> {
                 return List(head: head, tail: tail)
             })
             self.init(head: firstElement, tail: tail)
-        } else {
+        }
+        else {
             self.init()
         }
     }
@@ -49,5 +50,26 @@ public final class List<T> {
         case .None: fatalError("Can’t get tail of empty List")
         case .Some(let t): return t
         }
+    }
+}
+
+public struct ListGenerator<T> : GeneratorType {
+    var list: List<T>
+
+    public mutating func next() -> T? {
+        if list.isEmpty {
+            return nil
+        }
+        else {
+            let head = list.head
+            list = list.tail
+            return head
+        }
+    }
+}
+
+extension List : SequenceType {
+    public func generate() -> ListGenerator<T> {
+        return ListGenerator(list: self)
     }
 }
