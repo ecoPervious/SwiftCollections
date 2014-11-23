@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5D88AF221A2209AB008D6E83 /* SwiftCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D88AF161A2209AB008D6E83 /* SwiftCollections.framework */; };
+		5D88AF351A220ADF008D6E83 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88AF341A220ADF008D6E83 /* List.swift */; };
+		5D88AF371A220AFE008D6E83 /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88AF361A220AFE008D6E83 /* ListTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,8 @@
 		5D88AF1A1A2209AB008D6E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D88AF211A2209AB008D6E83 /* SwiftCollectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCollectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D88AF271A2209AB008D6E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D88AF341A220ADF008D6E83 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		5D88AF361A220AFE008D6E83 /* ListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				5D88AF1A1A2209AB008D6E83 /* Info.plist */,
+				5D88AF341A220ADF008D6E83 /* List.swift */,
 			);
 			path = SwiftCollections;
 			sourceTree = "<group>";
@@ -76,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				5D88AF271A2209AB008D6E83 /* Info.plist */,
+				5D88AF361A220AFE008D6E83 /* ListTests.swift */,
 			);
 			path = SwiftCollectionsTests;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D88AF351A220ADF008D6E83 /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D88AF371A220AFE008D6E83 /* ListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +336,7 @@
 		5D88AF301A2209AB008D6E83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -340,12 +349,14 @@
 				INFOPLIST_FILE = SwiftCollectionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5D88AF311A2209AB008D6E83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
