@@ -1,6 +1,11 @@
 private let MinBucketCount = 16
 private let MaxLoad: Double = 0.5 // Resize the set if the item count exceeds this percentage of the bucket count
 
+/// An unordered collection of unique objects.
+///
+/// Implemented using a hash table. Items in the set must implement Hashable.
+///
+/// Lookup, insert and delete should be O(1) operations.
 public struct Set<T: Hashable> {
 
     private var buckets: ContiguousArray<List<T>>
@@ -36,7 +41,6 @@ public struct Set<T: Hashable> {
     public private(set) var count: Int = 0
     public var capacity: Int { return Int(Double(bucketCount) * MaxLoad) }
 
-    /// The number of buckets
     private var bucketCount: Int {
         return buckets.count
     }
