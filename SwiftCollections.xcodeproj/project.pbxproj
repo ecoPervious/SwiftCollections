@@ -12,6 +12,8 @@
 		5D88AF371A220AFE008D6E83 /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88AF361A220AFE008D6E83 /* ListTests.swift */; };
 		5D88AF4E1A223285008D6E83 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88AF4D1A223285008D6E83 /* Set.swift */; };
 		5D88AF501A227F1E008D6E83 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88AF4F1A227F1E008D6E83 /* SetTests.swift */; };
+		5D88AF781A23AD5C008D6E83 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88AF771A23AD5C008D6E83 /* Heap.swift */; };
+		5D88AF7A1A23AD96008D6E83 /* HeapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D88AF791A23AD96008D6E83 /* HeapTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		5D88AF361A220AFE008D6E83 /* ListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTests.swift; sourceTree = "<group>"; };
 		5D88AF4D1A223285008D6E83 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		5D88AF4F1A227F1E008D6E83 /* SetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
+		5D88AF771A23AD5C008D6E83 /* Heap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		5D88AF791A23AD96008D6E83 /* HeapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeapTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 				5D88AF1A1A2209AB008D6E83 /* Info.plist */,
 				5D88AF341A220ADF008D6E83 /* List.swift */,
 				5D88AF4D1A223285008D6E83 /* Set.swift */,
+				5D88AF771A23AD5C008D6E83 /* Heap.swift */,
 			);
 			path = SwiftCollections;
 			sourceTree = "<group>";
@@ -88,6 +93,7 @@
 				5D88AF271A2209AB008D6E83 /* Info.plist */,
 				5D88AF361A220AFE008D6E83 /* ListTests.swift */,
 				5D88AF4F1A227F1E008D6E83 /* SetTests.swift */,
+				5D88AF791A23AD96008D6E83 /* HeapTests.swift */,
 			);
 			path = SwiftCollectionsTests;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D88AF781A23AD5C008D6E83 /* Heap.swift in Sources */,
 				5D88AF4E1A223285008D6E83 /* Set.swift in Sources */,
 				5D88AF351A220ADF008D6E83 /* List.swift in Sources */,
 			);
@@ -207,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D88AF7A1A23AD96008D6E83 /* HeapTests.swift in Sources */,
 				5D88AF501A227F1E008D6E83 /* SetTests.swift in Sources */,
 				5D88AF371A220AFE008D6E83 /* ListTests.swift in Sources */,
 			);
@@ -395,6 +403,7 @@
 				5D88AF2E1A2209AB008D6E83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D88AF2F1A2209AB008D6E83 /* Build configuration list for PBXNativeTarget "SwiftCollectionsTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +412,7 @@
 				5D88AF311A2209AB008D6E83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
