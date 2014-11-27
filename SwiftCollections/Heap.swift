@@ -8,20 +8,18 @@
 /// their children, and the root node is the smallest element in the heap.
 /// Call Heap(isOrderedBefore: { $0 > $1 }) to create a max-heap.
 ///
-public class Heap<T : Comparable> {
+public struct Heap<T : Comparable> {
     
-    public convenience init() {
-        self.init([], isOrderedBefore: { $0 < $1 })
-    }
-    
-    public convenience init(_ values: [T]) {
+    public init(_ values: [T] = []) {
         self.init(values, isOrderedBefore: { $0 < $1 })
     }
     
-    public convenience init(isOrderedBefore: (T, T) -> Bool) {
+    public init(isOrderedBefore: (T, T) -> Bool) {
         self.init([], isOrderedBefore)
     }
     
+    // TODO: isOrderedBefore should be a default parameter, but that
+    // crashes the Swift compiler with a segfault
     public init(_ values: [T], isOrderedBefore: (T, T) -> Bool) {
         self.isOrderedBefore = isOrderedBefore
         
@@ -48,7 +46,7 @@ public class Heap<T : Comparable> {
     }
     
     /// Inserts an item into the heap. Complexity: O(n)
-    public func insert(k: T) {
+    public mutating func insert(k: T) {
         // Insert the item at the end, then bubble up until the heap property
         // is restored.
         buffer.append(k)
@@ -58,7 +56,7 @@ public class Heap<T : Comparable> {
     /// Returns the root element after removing it from the heap.
     /// Raises an exception if the heap is empty.
     /// Complexity: O(n)
-    public func extractRoot() -> T {
+    public mutating func extractRoot() -> T {
         precondition(!isEmpty, "Accessing the root element of an empty heap")
         
         // Move the last element to the root position, then bubble down
@@ -95,7 +93,7 @@ public class Heap<T : Comparable> {
 
     /// Bubble-up the element k at the given index until heap invariant is
     /// restored (i.e., k's parent is ordered before k)
-    private func bubbleUp(index: Int) {
+    private mutating func bubbleUp(index: Int) {
         if let (parentIndex, parent) = parent(index) {
             let k = buffer[index]
             if (isOrderedBefore(k, parent)) {
@@ -108,7 +106,7 @@ public class Heap<T : Comparable> {
     
     /// Bubble-down the element k at the given index until heap invariant is
     /// restored (i.e., k's children are ordered after k)
-    private func bubbleDown(index: Int) {
+    private mutating func bubbleDown(index: Int) {
         if let (childIndex, child) = smallestChild(index) {
             let k = buffer[index]
             if (isOrderedBefore(child, k)) {
