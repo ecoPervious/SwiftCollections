@@ -11,11 +11,26 @@
 public class Heap<T : Comparable> {
     
     public convenience init() {
-        self.init(isOrderedBefore: { $0 < $1 })
+        self.init([], isOrderedBefore: { $0 < $1 })
     }
     
-    public init(isOrderedBefore: (T, T) -> Bool) {
+    public convenience init(_ values: [T]) {
+        self.init(values, isOrderedBefore: { $0 < $1 })
+    }
+    
+    public convenience init(isOrderedBefore: (T, T) -> Bool) {
+        self.init([], isOrderedBefore)
+    }
+    
+    public init(_ values: [T], isOrderedBefore: (T, T) -> Bool) {
         self.isOrderedBefore = isOrderedBefore
+        
+        // TODO: Shorten this to O(n) (from O(n log n)) with a more efficient
+        // heapify implementation
+        // (see https://en.wikipedia.org/wiki/Heapsort#Pseudocode)
+        for v in values {
+            insert(v)
+        }
     }
     
     public var isEmpty: Bool { return buffer.isEmpty }
