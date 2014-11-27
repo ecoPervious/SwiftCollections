@@ -1,70 +1,67 @@
 import SwiftCollections
-import XCTest
+import Quick
+import Nimble
 
-class HeapTests: XCTestCase {
+class HeapSpec : QuickSpec {
+    override func spec() {
+        describe("a heap") {
+            it("counts its elements") {
+                let emptyHeap = Heap<Int>()
+                let nonEmptyHeap = Heap<Int>([5,3,1,2,4])
+                expect(emptyHeap.count) == 0
+                expect(nonEmptyHeap.count) == 5
+            }
+            
+            context("when items are inserted") {
+                it("increments the item count") {
+                    var heap = Heap<Int>()
+                    var expectedCount = 0
+                    let values = [10, 5, -10]
+                    for k in values {
+                        heap.insert(k)
+                        expectedCount++
+                        expect(heap.count) == expectedCount
+                    }
+                }
 
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-
-    func testCountForEmptyHeap() {
-        let emptyHeap = Heap<Int>()
-        XCTAssertEqual(emptyHeap.count, 0)
-    }
-    
-    func testCountForNonEmptyHeap() {
-        let threeElementHeap = Heap([5,3,1])
-        XCTAssertEqual(threeElementHeap.count, 3)
-    }
-    
-    func testThatInsertPreservesHeapInvariant() {
-        var heap = Heap<Int>()
-        for k in [10,8,6,4,2,7,5,13,4,2] {
-            heap.insert(k)
-            XCTAssertTrue(heap.isValid)
+                it("preserves the heap invariant") {
+                    var heap = Heap<Int>()
+                    for k in [10,8,6,4,2,7,5,13,4,2] {
+                        heap.insert(k)
+                        expect(heap.isValid)
+                    }
+                    expect(heap.root) == 2
+                }
+            }
+            
+            context("when the root is extracted") {
+                it("decrements the item count") {
+                    var heap = Heap(["Amy", "Bob", "Christina", "Dan"])
+                    var expectedCount = 4
+                    while !heap.isEmpty {
+                        heap.extractRoot()
+                        expectedCount--
+                        expect(heap.count) == expectedCount
+                    }
+                }
+                
+                it("preserves the heap invariant") {
+                    let values = [10,8,6,4,2,7,5,13,4,2]
+                    var heap = Heap<Int>(values)
+                    for k in sorted(values) {
+                        let extractedRoot = heap.extractRoot()
+                        expect(extractedRoot) == k
+                        expect(heap.isValid)
+                    }
+                }
+            }
+            
+            context("with a custom ordering function") {
+                it("preserves the heap invariant") {
+                    let heap = Heap([1,2,3,4,5,6,7,8,9,10], isOrderedBefore: { $0 > $1 })
+                    expect(heap.root) == 10
+                }
+            }
         }
-        XCTAssertEqual(heap.root, 2)
-    }
-    
-    func testThatExtractRootPreservesHeapInvariant() {
-        let values = [10,8,6,4,2,7,5,13,4,2]
-        var heap = Heap<Int>(values)
-        
-        for k in sorted(values) {
-            let extractedRoot = heap.extractRoot()
-            XCTAssertEqual(extractedRoot, k)
-            XCTAssertTrue(heap.isValid)
-        }
-    }
-    
-    func testThatInsertIncrementsCount() {
-        var heap = Heap<Int>()
-        XCTAssertEqual(heap.count, 0)
-        heap.insert(10)
-        XCTAssertEqual(heap.count, 1)
-        heap.insert(5)
-        XCTAssertEqual(heap.count, 2)
-    }
-
-    func testThatExtractRootDecrementsCount() {
-        var heap = Heap(["Amy", "Bob", "Christina", "Dan"])
-        XCTAssertEqual(heap.count, 4)
-        heap.extractRoot()
-        XCTAssertEqual(heap.count, 3)
-        heap.extractRoot()
-        XCTAssertEqual(heap.count, 2)
-        heap.extractRoot()
-        XCTAssertEqual(heap.count, 1)
-        heap.extractRoot()
-        XCTAssertEqual(heap.count, 0)
-    }
-    
-    func testThatOrderingCanBeCustomized() {
-        let heap = Heap([1,2,3,4,5,6,7,8,9,10], isOrderedBefore: { $0 > $1 })
-        XCTAssertEqual(heap.root, 10)
     }
 }
