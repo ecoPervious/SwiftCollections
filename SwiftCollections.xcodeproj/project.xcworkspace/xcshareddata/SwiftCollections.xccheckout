@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A27FCEC0-029E-40EE-A0BB-250995814D9A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SwiftCollections</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1C5A053A2AC6DB3F9429A4487ED47566D66FA23C</key>
+		<string>github.com:ole/SwiftCollections.git</string>
+		<key>95438028B10BBB846574013D29F154A00556A9D1</key>
+		<string>github.com:Quick/Nimble.git</string>
+		<key>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</key>
+		<string>github.com:Quick/Quick.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SwiftCollections.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1C5A053A2AC6DB3F9429A4487ED47566D66FA23C</key>
+		<string>../..</string>
+		<key>95438028B10BBB846574013D29F154A00556A9D1</key>
+		<string>../..Vendor/Nimble/</string>
+		<key>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</key>
+		<string>../..Vendor/Quick/</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:ole/SwiftCollections.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1C5A053A2AC6DB3F9429A4487ED47566D66FA23C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>95438028B10BBB846574013D29F154A00556A9D1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Nimble</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Quick</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1C5A053A2AC6DB3F9429A4487ED47566D66FA23C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftCollections</string>
+		</dict>
+	</array>
+</dict>
+</plist>

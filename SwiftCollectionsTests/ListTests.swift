@@ -30,9 +30,8 @@ class ListTests: XCTestCase {
     }
 
     func DISABLED_testHeadForForEmptyList() {
-        // TODO: Should test that emptyList.head throws an exception
+        // TODO: Should test that emptyList.head causes a runtime error
         // This seems impossible to do at the moment
-        //XCTAssertThrows(emptyList.head)
     }
     
     func testTailForForNonEmptyList() {
@@ -40,9 +39,8 @@ class ListTests: XCTestCase {
     }
 
     func DISABLED_testTailForForEmptyList() {
-        // TODO: Should test that emptyList.tail throws an exception
+        // TODO: Should test that emptyList.tail causes a runtime error
         // This seems impossible to do at the moment
-        //XCTAssertThrows(emptyList.tail)
     }
     
     func testThatItCountsLength() {

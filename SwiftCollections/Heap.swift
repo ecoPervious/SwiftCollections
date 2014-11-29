@@ -39,7 +39,7 @@ public struct Heap<T : Comparable> {
     /// The root element of the heap. The heap guarantees that this is always
     /// the element that is less than all other elements in the heap
     /// (as specified by the isOrderedBefore function).
-    /// Raises an exception if the heap is empty.
+    /// Results in a runtime error if the heap is empty.
     public var root: T {
         precondition(!isEmpty, "Accessing the root element of an empty heap")
         return buffer[0]
@@ -54,7 +54,7 @@ public struct Heap<T : Comparable> {
     }
     
     /// Returns the root element after removing it from the heap.
-    /// Raises an exception if the heap is empty.
+    /// Results in a runtime error if the heap is empty.
     /// Complexity: O(n)
     public mutating func extractRoot() -> T {
         precondition(!isEmpty, "Accessing the root element of an empty heap")
